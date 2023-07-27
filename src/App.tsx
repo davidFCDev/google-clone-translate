@@ -3,6 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { useStore } from "./hooks/useStore";
 
 import { Container, Row, Col } from "react-bootstrap";
+import { AUTO_LANGUAGE } from "./constants";
 
 function App() {
   const { fromLanguage, toLanguage, interchangeLenguages } = useStore();
@@ -16,7 +17,7 @@ function App() {
           {fromLanguage}
         </Col>
         <Col>
-          <button onClick={interchangeLenguages}>Intercambiar</button>
+          <button disabled={fromLanguage === AUTO_LANGUAGE} onClick={interchangeLenguages}>Intercambiar</button>
         </Col>
         <Col>
           <h2>To</h2>
