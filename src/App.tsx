@@ -5,7 +5,7 @@ import { useStore } from "./hooks/useStore";
 import { Container, Row, Col } from "react-bootstrap";
 
 function App() {
-  const { fromLanguage, setFromLanguage } = useStore();
+  const { fromLanguage, toLanguage, interchangeLenguages } = useStore();
 
   return (
     <Container fluid>
@@ -13,16 +13,16 @@ function App() {
       <Row>
         <Col>
           <h2>From</h2>
+          {fromLanguage}
         </Col>
         <Col>
-          <button>Intercambiar</button>
+          <button onClick={interchangeLenguages}>Intercambiar</button>
         </Col>
         <Col>
           <h2>To</h2>
+          {toLanguage}
         </Col>
       </Row>
-      <button onClick={() => setFromLanguage("es")}>Cambiar a Español </button>
-      {fromLanguage}
     </Container>
   );
 }
