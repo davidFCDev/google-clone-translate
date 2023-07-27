@@ -4,6 +4,7 @@ import { useStore } from "./hooks/useStore";
 
 import { Container, Row, Col } from "react-bootstrap";
 import { AUTO_LANGUAGE } from "./constants";
+import { LanguageSelector } from "./components/LanguageSelector";
 
 function App() {
   const { fromLanguage, toLanguage, interchangeLenguages } = useStore();
@@ -13,15 +14,18 @@ function App() {
       <h1>Google Translate</h1>
       <Row>
         <Col>
-          <h2>From</h2>
-          {fromLanguage}
+          <LanguageSelector />
         </Col>
         <Col>
-          <button disabled={fromLanguage === AUTO_LANGUAGE} onClick={interchangeLenguages}>Intercambiar</button>
+          <button
+            disabled={fromLanguage === AUTO_LANGUAGE}
+            onClick={interchangeLenguages}
+          >
+            Intercambiar
+          </button>
         </Col>
         <Col>
-          <h2>To</h2>
-          {toLanguage}
+          <LanguageSelector />
         </Col>
       </Row>
     </Container>
