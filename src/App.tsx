@@ -1,4 +1,15 @@
 import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+
+const initialState = {
+  fromLanguage: "auto",
+  toLanguage: "en",
+  fromText: "",
+  result: "",
+  loading: false,
+};
+
+
 
 function App() {
   return (
